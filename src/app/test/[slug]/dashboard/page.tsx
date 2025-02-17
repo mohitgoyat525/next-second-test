@@ -18,7 +18,7 @@ const HeroLayout = () => {
       <div className="flex gap-4 bg-[#D9D9D9] justify-center items-center">
         {arr.map((obj, i) => (
           <Link
-            href={`/test/${obj.toLowerCase().replace(" ", "-")}`}
+            href={`/test/${obj.toLowerCase().replace(" ", "-")}/dashboard`}
             onClick={() => handleButtonClick(i)}
             key={i}
             className={`${
