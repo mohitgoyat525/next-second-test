@@ -74,7 +74,7 @@ const Hero = () => {
         <div className="flex items-center justify-between ">
           {ICONS_LIST.map((item, index) => (
             <p
-              className={`flex items-center justify-center size-[58px] border border-solid border-white bg-[#FAFAFA0A] border-[#407BFF3D] rounded-[6px] transition-all duration-500 ${
+              className={`flex items-center justify-center size-[58px] border border-solid border-[#407BFF3D] bg-[#FAFAFA0A] rounded-[6px] transition-all duration-500 ${
                 currentSlide === index
                   ? "bg-garidentline hover-svg"
                   : "bg-transparent"
@@ -114,7 +114,7 @@ const Hero = () => {
                   alt="number"
                   width={297}
                   height={182}
-                  className="mb-6 max-lg:max-w-[100px]"
+                  className="mb-6 max-lg:max-w-[100px] pointer-events-none"
                 />
                 <h2 className="text-3xl font-montserrat font-bold leading-[39.6px]  text-offWhite max-w-[461px] text-start mb-4 max-lg:text-2xl max-md:text-xl">
                   {obj.title}
@@ -132,7 +132,7 @@ const Hero = () => {
                   alt="slide"
                   width={614}
                   height={247}
-                  className="max-w-[614px] h-[427px] max-h-full object-cover max-md:h-full max-xl:w-full"
+                  className="max-w-[614px] pointer-events-none h-[427px] max-h-full object-cover max-md:h-full max-xl:w-full"
                 />
               </div>
             </div>

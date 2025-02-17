@@ -107,7 +107,7 @@ const ToDoList = () => {
               myValue={value.email}
               myType="email"
               myPlaceholder="Enter your email"
-              myClass="w-full p-3 border border-gray-300 rounded-lg  "
+              myClass="w-full p-3 border border-gray-300 rounded-lg"
             />
             {error && !value.email && (
               <p className="text-red-500 text-sm">Please enter your email</p>

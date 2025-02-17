@@ -18,7 +18,7 @@ const PrimeryInput = ({
     <input
       type={myType}
       placeholder={myPlaceholder}
-      className={`placeholder:text-black placeholder:text-lg placeholder:font-medium font-medium text-lg text-black rounded-xl px-3 py-4 w-full border border-black outline-none max-lg:placeholder:text-base max-lg:text-lg max-md:placeholder:text-sm max-lg:text-sm ${myClass}`}
+      className={`text-black placeholder:text-lg placeholder:font-normal font-medium text-lg placeholder:text-gray-500 rounded-xl px-3 py-4 w-full border border-black outline-none max-lg:placeholder:text-base max-md:placeholder:text-sm max-lg:text-sm ${myClass}`}
       onChange={myOnChange}
       value={myValue}
     />

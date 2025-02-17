@@ -23,7 +23,7 @@ const HeroLayout = () => {
             key={i}
             className={`${
               slug === obj.toLowerCase().replace(" ", "-") &&
-              "bg-red-400 text-black border border-black"
+              "bg-blue-700 text-black border border-black"
             } bg-black mx-auto text-white px-4 py-2.5 my-2 border border-transparent text-base font-normal rounded-lg hover:text-black hover:bg-transparent hover:border-black duration-300 ease-linear text-center flex justify-center items-center`}
           >
             {obj}
