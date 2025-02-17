@@ -1,146 +1,45 @@
-"use client";
-import { HERO_LIST, ICONS_LIST } from "@/utils/Helper";
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { gsap } from "gsap";
-
+import React from 'react'
+import Image from 'next/image';
 const Hero = () => {
-  const sliderRef = useRef<HTMLDivElement | null>(null);
-  const lineRef = useRef<HTMLDivElement | null>(null);
-  const circleRef = useRef<HTMLDivElement | null>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = HERO_LIST.length;
-
-  const updateProgressBar = () => {
-    if (sliderRef.current && lineRef.current && circleRef.current) {
-      const slideWidth = 100 / totalSlides;
-      const progress = (currentSlide + 1) * slideWidth;
-      gsap.to(lineRef.current, {
-        width: `${progress}%`,
-        duration: 1.5,
-        ease: "linear",
-      });
-      gsap.to(circleRef.current, {
-        left: `${progress}%`,
-        duration: 1.5,
-        ease: "linear",
-      });
-    }
-  };
-
-  const slideInFromRight = () => {
-    if (sliderRef.current) {
-      const slides = sliderRef.current.children;
-      const slideWidth = slides[0].clientWidth;
-      gsap.fromTo(
-        slides[currentSlide],
-        { x: slideWidth },
-        {
-          x: 0,
-          duration: 1.2,
-          ease: "power4.out",
-        }
-      );
-    }
-  };
-
-  useEffect(() => {
-    updateProgressBar();
-    slideInFromRight();
-
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 5000);
-
-    return () => clearInterval(slideInterval);
-  }, [currentSlide, totalSlides]);
-
   return (
-    <div className="bg-offBlack overflow-hidden max-xl:px-4 py-20 max-lg:py-16 max-md:py-10 relative">
-      <Image
-        src="/assets/images/png/layer-right.png"
-        alt="shadow"
-        width={199}
-        height={199}
-        className=" absolute top-10 right-0"
-      />
+    <div className="bg-offBlack flex items-center justify-center min-h-screen flex-col px-4 py-10">
       <div>
-        <h1 className="text-center font-medium text-5xl text-white leading-[57.6px] max-w-[830px] mx-auto max-lg:text-4xl max-md:text-3xl font-montserrat">
+        <h1 className="font-medium text-offWhite font-montserrat text-5xl max-lg:text-4xl max-md:text-3xl max-w-[830px] mx-auto">
           Transforming Secure, Modern
-          <span className="text-gardient"> Development</span> with AdaptsAI
+          <span className="text-gardient"> Development </span> with AdaptsAI
         </h1>
       </div>
-      <div className="max-w-[1440px] mx-auto justify-between mt-[60px] max-lg:mt-10 max-md:mt-6 px-4">
-        <div className="flex items-center justify-between ">
-          {ICONS_LIST.map((item, index) => (
-            <p
-              className={`flex items-center justify-center size-[58px] border border-solid border-[#407BFF3D] bg-[#FAFAFA0A] rounded-[6px] transition-all duration-500 ${
-                currentSlide === index
-                  ? "bg-garidentline hover-svg"
-                  : "bg-transparent"
-              }`}
-              key={index}
-            >
-              {item}
-            </p>
-          ))}
+      <div className="flex items-center justify-center gap-10 max-md:flex-wrap mt-10 max-md:mt-8">
+        <div className="w-6/12 max-md:w-full">
+          <Image
+            src="/assets/images/png/01.png"
+            alt="number"
+            width={297}
+            height={182}
+            className="object-cover max-w-[297px] max-md:max-w-[100px] pointer-events-none"
+          />
+          <h2 className="text-[32px] max-md:text-2xl font-bold text-offWhite font-montserrat max-w-[461px]">
+            AI Chatbots don’t create enterprse-grade
+            <span className="text-gardient"> apps </span>
+          </h2>
+          <p className="text-base font-normal text-offWhite max-w-[461px] mt-4">
+            Bootstrap end to end application package including architecture,
+            tests, infrastructure and deployment code leveraging AdaptsAI’s
+            patented engine. Your apps are secure by design and by default.
+          </p>
         </div>
-      </div>
-      <div
-        className="w-full my-3 h-[2px] bg-garidentline relative flex items-center"
-        ref={lineRef}
-      >
-        <div
-          className="size-3 bg-garidentline bg-circle rounded-full absolute"
-          ref={circleRef}
-        ></div>
-      </div>
-
-      <div className="relative mt-[60px] max-lg:mt-10 max-md:mt-8 max-sm:mt-5">
-        <div
-          className="flex transition-transform duration-1000 ease-in-out max-w-[1440px] mx-auto max-lg:flex-wrap"
-          ref={sliderRef}
-        >
-          {HERO_LIST.map((obj, index) => (
-            <div
-              className={`flex items-center max-w-[1440px] max-lg:flex-wrap mx-auto transition-opacity duration-1000 ease-in-out ${
-                currentSlide === index ? "block" : "hidden"
-              }`}
-              key={index}
-            >
-              <div className="flex flex-col w-6/12 max-lg:w-full text-center">
-                <Image
-                  src={obj.number}
-                  alt="number"
-                  width={297}
-                  height={182}
-                  className="mb-6 max-lg:max-w-[100px] pointer-events-none"
-                />
-                <h2 className="text-3xl font-montserrat font-bold leading-[39.6px]  text-offWhite max-w-[461px] text-start mb-4 max-lg:text-2xl max-md:text-xl">
-                  {obj.title}
-                </h2>
-                <p className="text-base font-normal mb-2 max-w-[461px] text-start  text-offWhite">
-                  {obj.discription}
-                </p>
-                <p className="text-base font-normal max-w-[461px] text-start mt-6  text-offWhite">
-                  {obj.discriptionTwo}
-                </p>
-              </div>
-              <div className="w-6/12 max-lg:w-full flex items-center">
-                <Image
-                  src={obj.slide}
-                  alt="slide"
-                  width={614}
-                  height={247}
-                  className="max-w-[614px] pointer-events-none h-[427px] max-h-full object-cover max-md:h-full max-xl:w-full"
-                />
-              </div>
-            </div>
-          ))}
+        <div className="w-6/12 max-md:w-full">
+          <Image
+            src="/assets/images/png/hero-slide-one.png"
+            alt="slide"
+            width={614}
+            height={427}
+            className=' object-cover pointer-events-none'
+          />
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default Hero;
+export default Hero
