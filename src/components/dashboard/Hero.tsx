@@ -17,12 +17,12 @@ const Hero = () => {
       const progress = (currentSlide + 1) * slideWidth;
       gsap.to(lineRef.current, {
         width: `${progress}%`,
-        duration: 1,
+        duration: 1.5,
         ease: "linear",
       });
       gsap.to(circleRef.current, {
         left: `${progress}%`,
-        duration: 1,
+        duration: 1.5,
         ease: "linear",
       });
     }
@@ -39,14 +39,15 @@ const Hero = () => {
   }, [currentSlide, totalSlides]);
 
   return (
-    <div className="bg-black overflow-hidden max-xl:px-4 py-20 max-lg:py-16 max-md:py-10">
+    <div className="bg-black overflow-hidden max-xl:px-4 py-20 max-lg:py-16 max-md:py-10 relative">
+      <Image src='/assets/images/png/layer-right.png' alt="shadow" width={199} height={199} className=" absolute top-10 right-0"/>
       <div>
         <h1 className="text-center font-medium text-5xl text-white leading-[57.6px] max-w-[830px] mx-auto max-lg:text-4xl max-md:text-3xl font-montserrat">
           Transforming Secure, Modern
           <span className="text-gardient"> Development</span> with AdaptsAI
         </h1>
       </div>
-      <div className="max-w-[1440px] mx-auto justify-between mt-[60px] max-lg:mt-10 max-md:mt-6">
+      <div className="max-w-[1440px] mx-auto justify-between mt-[60px] max-lg:mt-10 max-md:mt-6 px-4">
         <div className="flex items-center justify-between ">
           {ICONS_LIST.map((item, index) => (
             <p
@@ -72,7 +73,7 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="relative mt-10">
+      <div className="relative mt-[60px] max-lg:mt-10 max-md:mt-8 max-sm:mt-5">
         <div
           className="flex transition-transform duration-1000 ease-in-out max-w-[1440px] mx-auto max-lg:flex-wrap"
           ref={sliderRef}
@@ -94,7 +95,7 @@ const Hero = () => {
                   height={182}
                   className="mb-6 max-lg:max-w-[100px]"
                 />
-                <h2 className="text-3xl montserrat font-bold leading-[39.6px] text-white max-w-[461px] text-start mb-4 max-lg:text-2xl max-md:text-xl">
+                <h2 className="text-3xl font-montserrat font-bold leading-[39.6px] text-white max-w-[461px] text-start mb-4 max-lg:text-2xl max-md:text-xl">
                   {obj.title}
                 </h2>
                 <p className="text-base font-normal mb-2 max-w-[461px] text-start text-[#FAFAFA]">

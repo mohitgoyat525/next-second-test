@@ -1,4 +1,4 @@
-import { title } from "process";
+
 import { AiChatBoxIcon, AiIcon, ModetitrationIcon, LegalIcon } from "./Icons";
 
 export const ICONS_LIST = [
@@ -33,8 +33,8 @@ export const HERO_LIST = [
     number: "/assets/images/png/04.png",
     title: "AI generated apps need maintenance too!",
     discription:
-      "Business applications demand ongoing maintenance to address new vulnerabilities, ensure reliability, and deliver updates or bug fixes",
-    descriptionTwo:
+      "Business applications demand ongoing maintenance to address new vulnerabilities, ensure reliability, and deliver updates or bug fixes.",
+    discriptionTwo:
       "With AdaptsAI's advanced context awareness, maintenance becomes effortless—minimizing code ramp-up time, streamlining troubleshooting, and simplifying enhancements for maximum efficiency.",
     slide: "/assets/images/png/hero-slide-four-img.png",
   },

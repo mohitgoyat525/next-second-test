@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
 .text-gardient {
   background: linear-gradient(89.88deg, #DF2BFF 8.4%, #00B7FF 47.72%);
   -webkit-background-clip: text;  
