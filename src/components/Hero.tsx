@@ -28,8 +28,25 @@ const Hero = () => {
     }
   };
 
+  const slideInFromRight = () => {
+    if (sliderRef.current) {
+      const slides = sliderRef.current.children;
+      const slideWidth = slides[0].clientWidth;
+      gsap.fromTo(
+        slides[currentSlide],
+        { x: slideWidth },
+        {
+          x: 0,
+          duration: 1.2,
+          ease: "power4.out",
+        }
+      );
+    }
+  };
+
   useEffect(() => {
     updateProgressBar();
+    slideInFromRight();
 
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -87,9 +104,7 @@ const Hero = () => {
           {HERO_LIST.map((obj, index) => (
             <div
               className={`flex items-center max-w-[1440px] max-lg:flex-wrap mx-auto transition-opacity duration-1000 ease-in-out ${
-                currentSlide === index
-                  ? "opacity-100 block"
-                  : "opacity-0 hidden"
+                currentSlide === index ? "block" : "hidden"
               }`}
               key={index}
             >
@@ -101,13 +116,13 @@ const Hero = () => {
                   height={182}
                   className="mb-6 max-lg:max-w-[100px]"
                 />
-                <h2 className="text-3xl font-montserrat font-bold leading-[39.6px] text-white max-w-[461px] text-start mb-4 max-lg:text-2xl max-md:text-xl">
+                <h2 className="text-3xl font-montserrat font-bold leading-[39.6px]  text-offWhite max-w-[461px] text-start mb-4 max-lg:text-2xl max-md:text-xl">
                   {obj.title}
                 </h2>
-                <p className="text-base font-normal mb-2 max-w-[461px] text-start text-[#FAFAFA]">
+                <p className="text-base font-normal mb-2 max-w-[461px] text-start  text-offWhite">
                   {obj.discription}
                 </p>
-                <p className="text-base font-normal max-w-[461px] text-start mt-6 text-[#FAFAFA]">
+                <p className="text-base font-normal max-w-[461px] text-start mt-6  text-offWhite">
                   {obj.discriptionTwo}
                 </p>
               </div>

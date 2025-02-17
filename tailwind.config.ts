@@ -13,6 +13,7 @@ export default {
       },
       colors: {
         offBlack: "#010101",
+        offWhite: "#FAFAFA",
       },
     },
   },
