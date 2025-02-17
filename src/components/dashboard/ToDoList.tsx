@@ -24,7 +24,7 @@ const ToDoList = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrors(null); // Clear errors on input change
+    setErrors(null);
   };
 
   const validateForm = (): string | null => {
@@ -62,7 +62,6 @@ const ToDoList = () => {
       return;
     }
 
-    // Add data to the table
     const newEntry = {
       firstName: formData.firstName,
       email: formData.email,
@@ -70,8 +69,6 @@ const ToDoList = () => {
       password: formData.password,
     };
     setTableData([...tableData, newEntry]);
-
-    // Reset the form
     setFormData({
       firstName: "",
       email: "",

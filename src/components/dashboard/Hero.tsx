@@ -39,8 +39,14 @@ const Hero = () => {
   }, [currentSlide, totalSlides]);
 
   return (
-    <div className="bg-black overflow-hidden max-xl:px-4 py-20 max-lg:py-16 max-md:py-10 relative">
-      <Image src='/assets/images/png/layer-right.png' alt="shadow" width={199} height={199} className=" absolute top-10 right-0"/>
+    <div className="bg-offBlack overflow-hidden max-xl:px-4 py-20 max-lg:py-16 max-md:py-10 relative">
+      <Image
+        src="/assets/images/png/layer-right.png"
+        alt="shadow"
+        width={199}
+        height={199}
+        className=" absolute top-10 right-0"
+      />
       <div>
         <h1 className="text-center font-medium text-5xl text-white leading-[57.6px] max-w-[830px] mx-auto max-lg:text-4xl max-md:text-3xl font-montserrat">
           Transforming Secure, Modern
@@ -50,7 +56,7 @@ const Hero = () => {
       <div className="max-w-[1440px] mx-auto justify-between mt-[60px] max-lg:mt-10 max-md:mt-6 px-4">
         <div className="flex items-center justify-between ">
           {ICONS_LIST.map((item, index) => (
-            <p
+           <p
               className={`flex items-center justify-center size-[58px] border border-solid border-white bg-[#FAFAFA0A] border-[#407BFF3D] rounded-[6px] transition-all duration-500 ${
                 currentSlide === index
                   ? "bg-garidentline hover-svg"

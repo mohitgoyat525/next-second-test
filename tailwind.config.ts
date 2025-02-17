@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },
+      colors: {
+        offBlack: "#010101",
+      },
     },
   },
   plugins: [],
