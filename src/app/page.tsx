@@ -1,12 +1,12 @@
-import Hero from "@/components/dashboard/Hero";
-import ToDoList from "@/components/dashboard/ToDoList";
+import Hero from "@/components/Hero";
+import ToDoList from "@/components/ToDoList";
 import Image from "next/image";
+import HeroLayout from "./test/[slug]/page";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <ToDoList/>
+      <HeroLayout />
     </>
   );
 }

@@ -56,7 +56,7 @@ const Hero = () => {
       <div className="max-w-[1440px] mx-auto justify-between mt-[60px] max-lg:mt-10 max-md:mt-6 px-4">
         <div className="flex items-center justify-between ">
           {ICONS_LIST.map((item, index) => (
-           <p
+            <p
               className={`flex items-center justify-center size-[58px] border border-solid border-white bg-[#FAFAFA0A] border-[#407BFF3D] rounded-[6px] transition-all duration-500 ${
                 currentSlide === index
                   ? "bg-garidentline hover-svg"
@@ -117,7 +117,7 @@ const Hero = () => {
                   alt="slide"
                   width={614}
                   height={247}
-                  className="max-w-[614px] h-[427px]  max-h-full object-cover max-md:h-full max-xl:w-full"
+                  className="max-w-[614px] h-[427px] max-h-full object-cover max-md:h-full max-xl:w-full"
                 />
               </div>
             </div>
