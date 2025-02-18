@@ -43,11 +43,14 @@ const ToDoList = () => {
   const saveButtonHandler = (e: any) => {
     e.preventDefault();
     setError(true);
+
     if (checkDuplicate(value)) {
       setDuplicateError(true);
       return;
     }
+
     setDuplicateError(false);
+
     if (
       value.name !== "" &&
       value.email !== "" &&
@@ -114,6 +117,9 @@ const ToDoList = () => {
             )}
             {error && value.email && !emailRegex.test(value.email) && (
               <p className="text-red-500 text-sm">Invalid email format</p>
+            )}
+            {duplicateError && (
+              <p className="text-red-500 text-sm">This email already exists</p>
             )}
           </div>
           <div>

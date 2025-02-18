@@ -22,6 +22,7 @@ const Hero = () => {
             AI Chatbots don’t create enterprse-grade
             <span className="text-gardient"> apps </span>
           </h2>
+         
           <p className="text-base font-normal text-offWhite max-w-[461px] mt-4">
             Bootstrap end to end application package including architecture,
             tests, infrastructure and deployment code leveraging AdaptsAI’s
